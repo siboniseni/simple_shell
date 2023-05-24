@@ -3,13 +3,14 @@
 /**
  * erratoi - converts a string to an integer
  * @s: the string to be converted
+ * Sign of the number 
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
 int erratoi(char *s)
 {
 	int i = 0;
-	int sign = 1;  /* Sign of the number */
+	int sign = 1;  
 	int result = 0;
 
 	if (*s == '-')
@@ -144,3 +145,23 @@ char *convert_numb(long int num, int base, int flags)
 	return ptr;
 }
 
+/**
+ * remove_comments - function replaces first instance of '#' with '\0'
+ * @buf: address of the string to modify
+ *
+ * Return: Always 0;
+ */
+void rm_comments(char *buf)
+{
+	int i = 0;
+
+	while (buf[i] != '\0')
+	{
+		if (buf[i] == '#' && (i == 0 || buf[i - 1] == ' '))
+		{
+			buf[i] = '\0';
+			break;
+		}
+		i++;
+	}
+}
