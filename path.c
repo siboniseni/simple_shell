@@ -22,6 +22,7 @@ int isExecutable(info_t *info, char *filePath)
     return 0;
 }
 
+
 /**
  * copyCharacters - Creates a new buffer by duplicating characters.
  * @source: The source string.
