@@ -49,8 +49,8 @@ typedef struct liststr
 	char *str;
 	struct liststr *next;
 }
- list_t;
- 
+list_t;
+
 /**
  * struct passinfo - contains pseudo-arguements to pass into a function,
  * allowing uniform prototype for function pointer struct
@@ -94,11 +94,11 @@ typedef struct passinfo
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
 	int histcount;
-} 
+}
 
 info_t;
 
-#define INFO_INIT \
+#define INFO_INIT 
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0
 }
@@ -112,6 +112,7 @@ typedef struct shell_functions
 {
 	char *type;
 	int (*func)(info_t *);
+
 	builtin_table;
 }
 
@@ -125,7 +126,7 @@ void fork_command(info_t *info);
 
 
 /* toem_path.c  */
-int isExecutable(info_t *, char *)
+int isExecutable(info_t *, char*)
 char *copyCharacters(char *, int, int )
 char *findExecutablePath(info_t *, char *, char *)
 
@@ -194,14 +195,12 @@ int my_exit(info_t *)
 int my_cd(info_t *)
 int my_help(info_t *)
 
-
 /* toem_history_list.c */
 int display_history(info_t *info);
 int remove_alias(info_t *info, char *str);
 int set_alias(info_t *info, char *str);
 int print_alias(list_t *node);
 int alias_builtin(info_t *info);
-
 
 /*toem_input_handler.c */
 ssize_t get_input(info_t *);
