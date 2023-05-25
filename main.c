@@ -1,5 +1,3 @@
-main.c code
-
 #include "shell.h"
 
 /**
