@@ -99,16 +99,14 @@ typedef struct passinfo
 info_t;
 
 #define INFO_INIT 
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-		0, 0, 0
-}
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \0, 0, 0}
 
 /**
  * struct builtin - contains a builtin string and related function
  * @type: the builtin command flag
  * @func: the function
  */
-typedef struct shell_functions
+typedef struct shell_builtin
 {
 	char *type;
 	int (*func)(info_t *);
@@ -126,9 +124,9 @@ void fork_command(info_t *info);
 
 
 /* toem_path.c  */
-int isExecutable(info_t *, char*)
-char *copyCharacters(char *, int, int )
-char *findExecutablePath(info_t *, char *, char *)
+int isExecutable(info_t*, char*)
+char *copyCharacters(char*, int, int )
+char *findExecutablePath(info_t*, char*, char*)
 
 /* toem  */
 
@@ -141,8 +139,8 @@ char *convert_number(long int num, int base, int flags);
 void remove_comments(char *buf);
 
 /* toem_string_utils.c  */
-int str_length(char *)
-int str_compare(char *, char *)
+int str_length(char*)
+int str_compare(char*, char*)
 str_starts_with(const char *, const char *)
 char *str_concatenate(char *, char *)
 
@@ -158,8 +156,9 @@ char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
 
 /* toem_tokenA.c*/
-char **splitString(char *, char *)
-char **strtow2(char *, char);  char **splitString2(char *, char)
+char **splitString(char*, char*)
+char **strtow2(char*, char); 
+char **splitString2(char *,char)
 
 /* toem_opr_memory.c */
 char *copy_string(char *destination, const char *source);
@@ -184,16 +183,16 @@ int convert_to_int(char *s);
 
 
 /* toem_conversion.c */
-int erratoi(char *s)
-void printError(info_t *, char *) 
+int erratoi(char*)
+void printError(info_t*, char*) 
 int printout_d(int, int)
 char *convert_numb(long int, int, int)
-void remove_comments(char *);
+void remove_comments(char*);
 
 /* toem_shell_functions.c */
-int my_exit(info_t *)
-int my_cd(info_t *)
-int my_help(info_t *)
+int my_exit(info_t*)
+int my_cd(info_t*)
+int my_help(info_t*)
 
 /* toem_history_list.c */
 int display_history(info_t *info);
@@ -204,9 +203,9 @@ int alias_builtin(info_t *info);
 
 /*toem_input_handler.c */
 ssize_t get_input(info_t *);
-ssize_t input_bufr(info_t *, char **, size_t *)
-ssize_t read_buf(info_t *, char *, size_t *) 
-int _getline(info_t *, char **, size_t *);
+ssize_t input_bufr(info_t*, char**, size_t*)
+ssize_t read_buf(info_t*, char*, size_t*) 
+int _getline(info_t*, char**, size_t*);
 void sigintHandler(int);
 
 /* toem_getinfo.c */
