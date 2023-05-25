@@ -124,7 +124,7 @@ void fork_command(info_t *info);
 
 
 /* toem_path.c  */
-int isExecutable(info_t*, char*)
+int isExecutable(info_t *info, char *filePath)
 char *copyCharacters(char*, int, int )
 char *findExecutablePath(info_t*, char*, char*)
 
