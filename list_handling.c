@@ -1,7 +1,4 @@
-lists.c code
-
 #include "shell.h"
-
 /**
  * addNode - adds a node to the start of the list
  * @head: address of pointer to head node
