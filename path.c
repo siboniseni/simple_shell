@@ -7,7 +7,7 @@
  *
  * Return: 1 if the file is executable, 0 otherwise.
  */
-int isExecutable(info_t *info, char *filePath)
+int isexecutable(info_t *info, char *filePath)
 {
     struct stat fileStat;
 
@@ -31,7 +31,7 @@ int isExecutable(info_t *info, char *filePath)
  *
  * Return: Pointer to the new buffer.
  */
-char *copyCharacters(char *source, int start, int stop)
+char *copycharacters(char *source, int start, int stop)
 {
     static char buffer[1024];
     int k = 0;
@@ -55,7 +55,7 @@ char *copyCharacters(char *source, int start, int stop)
  *
  * Return: The full path of the command if found, or NULL.
  */
-char *findExecutablePath(info_t *info, char *pathString, char *command)
+char *findexecutablePath(info_t *info, char *pathString, char *command)
 {
     int currPos = 0;
     char *path;
